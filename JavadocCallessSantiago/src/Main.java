@@ -12,7 +12,7 @@ public class Main {
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int seleccion;
+        int opcion;
 
         do {
             System.out.println("---Menu---");
@@ -23,9 +23,9 @@ public class Main {
             System.out.println("5. Salir");
             System.out.print("Elija una opcion: ");
 
-            seleccion = sc.nextInt();
+            opcion = sc.nextInt();
 
-            switch (seleccion) {
+            switch (opcion) {
                 case 1:
                     System.out.print("Ingrese peso en kilogramos: ");
                     double p = sc.nextDouble();
