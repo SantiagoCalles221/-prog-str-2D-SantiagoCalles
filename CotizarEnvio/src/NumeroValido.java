@@ -2,53 +2,64 @@ import java.util.Scanner;
 
 public class NumeroValido {
 
-    public int validarDistancia(Scanner scanner, String msg) {
-        int valordistancia;
+    public int leerIntEnRango(Scanner sc, String msg, int min, int max) {
+        int valor;
         while (true) {
             System.out.println(msg);
-            if (valordistancia > 0 && valordistancia <= 2000) {
-                return valordistancia;
+            if (sc.hasNextInt()) {
+                valor = sc.nextInt();
 
+                if (valor >= min && valor <= max) {
+                    return valor;
+            }
 
-            if (valordistancia > 2000) {
-                System.out.println("Excede la distancia permitida (máx 2000)");
+            if (valor> max) {
+                System.out.println("Error: el valor no puede ser mayor a " + max);
             } else {
-                System.out.println("El dato debe ser mayor a 0");
+                System.out.println("El dato debe ser mayor o igual a" + min);
             }
             } else {
             System.out.println("Error: el dato no es numérico");
-            scanner.next();
+            sc.next();
         }
     }
 }
 
-    public int validarServicio(Scanner scanner, String msg) {
-        int servicio;
+
+   public double leerDoubleEnRango(Scanner sc, String msg, double min, double max) {
+        double valor;
+            while (true) {
+                System.out.println(msg);
+                if (sc.hasNextDouble()) {
+                    valor = sc.nextDouble();
+                    if (valor >= min && valor <= max) {
+                        return valor;
+                    }
+                    if (valor > max) {
+                        System.out.println("Error; el peso excede el maximo permitido: " + max + "kg");
+                    } else {
+                        System.out.println("Error: el peso debe ser de almenos: " + min + "kg");
+                    }
+                } else {
+                    System.out.println("El dato no es numerico");
+                    sc.next();
+                }
+            }
+    }
+
+    public boolean leerBoolean(Scanner sc, String msg) {
+        boolean valor;
         while (true) {
             System.out.println(msg);
-            if (scanner.hasNextInt()) {
-                servicio = scanner.nextInt();
-                if (servicio > 0) {
-                    if (servicio == 1) {
-                        System.out.println("Ha elegido el servicio estandar");
-                    }
-                    if (servicio == 2) {
-                        System.out.println("Ha elegido el servicio Express");
-                    }return servicio;
-
-                }
-                System.out.println("El dato esta fuera de rango (1-n)");
-                if (servicio > 2) {
-                    System.out.println("Excede la distancia permitida");
-                }
+            if (sc.hasNextBoolean()) {
+                valor = sc.nextBoolean();
+                return valor;
             } else {
-                System.out.println("El dato no es numerico");
-                scanner.next();
-
+                System.out.println("Error: debe escribir true or false");
+                sc.next();
             }
         }
     }
-    public double validarPeso(Scanner scanner, String msg){
-        double peso;
-    }
+
 }
+

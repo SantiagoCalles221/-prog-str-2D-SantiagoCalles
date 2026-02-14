@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Main {
+public class ActividadDoWhile {
     public static int conversiones;
     public static int CelciusaFarenheit;
     public static int FarenheitaCelcius;
@@ -26,27 +26,35 @@ public class Main {
                     System.out.print("Ingrese los grados en °C");
                     double p = sc.nextDouble();
                     System.out.println("El resultado es: " + ConversionGradosCelius(p));
+                    CelciusaFarenheit++;
                     break;
                 case 2:
                     conversiones++;
                     System.out.println("Ingrese los grados en °F");
                     double b = sc.nextDouble();
                     System.out.println("El resultado es: " + ConversionGradosFarenheit (b));
+                    FarenheitaCelcius++;
                     break;
                 case 3:
                     conversiones++;
                     System.out.println("Ingrese las millas a convertir");
                     double c = sc.nextDouble();
                     System.out.println("El resultado de la conversion es: " + ConversionMillasKm (c));
+                    MillasaKm++;
                     break;
                 case 4:
                     conversiones++;
                     System.out.println("Ingrese los kilometros a convertir");
                     double r = sc.nextDouble();
                     System.out.println("El resultado de la conversion es: " + ConversionKmMillas (r));
+                    KmaMillas++;
                     break;
                 case 5:
                     System.out.println("Conversiones totales: "+ conversiones);
+                    System.out.println("Conversiones de grados celcius a fareheit totales: "+ CelciusaFarenheit);
+                    System.out.println("Conversiones de grados farenheit a celcius totales: " + FarenheitaCelcius);
+                    System.out.println("Converiones de millas a kilometros totales: "+ MillasaKm);
+                    System.out.println("Conversiones de kilometros a millas totales: "+ KmaMillas);
                     System.out.println("Saliendo...");
                     break;
                 default:
@@ -64,5 +72,5 @@ public class Main {
     public static double ConversionKmMillas (double km) {
         return (km / 1.609); }
 
-    }
+
 }
